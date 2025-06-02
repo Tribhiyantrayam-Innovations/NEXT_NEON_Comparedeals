@@ -36,18 +36,20 @@ export default async function CategoryPage({ params }: { params: { slug: string 
         {products.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {products.map((product) => (
-              <Card key={product.id} className="hover:shadow-lg transition-shadow">
-                <CardHeader className="p-0">
-                  <div className="aspect-square relative overflow-hidden rounded-t-lg">
+              <Card key={product.id} className="hover:shadow-lg transition-shadow h-full flex flex-col">
+                <CardHeader className="p-0 relative">
+                  <div className="aspect-square w-full relative">
                     <Image
-                      src={product.image_url || "/placeholder.svg?height=300&width=300"}
+                      src={product.image_url || "/placeholder.svg"}
                       alt={product.name}
                       fill
-                      className="object-cover hover:scale-105 transition-transform"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-contain p-4 hover:scale-105 transition-transform"
+                      priority={false}
                     />
                   </div>
                 </CardHeader>
-                <CardContent className="p-4">
+                <CardContent className="p-4 flex-grow">
                   <CardTitle className="text-lg mb-2 line-clamp-2">{product.name}</CardTitle>
                   <p className="text-sm text-gray-600 mb-3 line-clamp-2">{product.description}</p>
                   <div className="flex items-center justify-between mb-2">
@@ -63,7 +65,13 @@ export default async function CategoryPage({ params }: { params: { slug: string 
                 </CardContent>
                 <CardFooter className="p-4 pt-0">
                   <Button className="w-full" asChild>
-                    <Link href={`/products/${product.id}`}>View Details</Link>
+                    <a 
+                      href={product.product_url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      View Details
+                    </a>
                   </Button>
                 </CardFooter>
               </Card>
