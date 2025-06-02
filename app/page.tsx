@@ -40,7 +40,7 @@ export default async function HomePage() {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-6">Welcome to EStore</h1>
+          <h1 className="text-5xl font-bold mb-6">Welcome to CompareDeals</h1>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Discover amazing products from top brands. Shop electronics, fashion, groceries and more!
           </p>
