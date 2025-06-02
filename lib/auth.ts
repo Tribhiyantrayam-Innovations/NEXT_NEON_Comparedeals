@@ -1,7 +1,7 @@
 import bcrypt from "bcryptjs"
 import { neon } from "@neondatabase/serverless"
 
-const sql = neon('postgresql://Ecommerce_owner:npg_xR5H9UGWflPc@ep-cool-hall-a8vrlanl-pooler.eastus2.azure.neon.tech/Ecommerce?sslmode=require')
+const sql = neon(process.env.DATABASE_URL!)
 
 export interface User {
   id: number
