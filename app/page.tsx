@@ -97,24 +97,26 @@ export default async function HomePage() {
           {featuredProducts.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {featuredProducts.slice(0, 8).map((product) => (
-                <Card key={product.id} className="hover:shadow-lg transition-shadow">
-                  <CardHeader className="p-0">
-                    <div className="aspect-square relative overflow-hidden rounded-t-lg">
+                <Card key={product.id} className="hover:shadow-lg transition-shadow h-full flex flex-col">
+                  <CardHeader className="p-0 relative">
+                    <div className="aspect-square w-full relative">
                       <Image
-                        src={product.image_url || "/placeholder.svg?height=300&width=300"}
+                        src={product.image_url || "/placeholder.svg"}
                         alt={product.name}
                         fill
-                        className="object-cover hover:scale-105 transition-transform"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                        className="object-contain p-4 hover:scale-105 transition-transform"
+                        priority={false}
                       />
                     </div>
                   </CardHeader>
-                  <CardContent className="p-4">
+                  <CardContent className="p-4 flex-grow">
                     <Badge variant="secondary" className="mb-2">
                       {product.category_name || "Uncategorized"}
                     </Badge>
                     <CardTitle className="text-lg mb-2 line-clamp-2">{product.name}</CardTitle>
                     <p className="text-sm text-gray-600 mb-2 line-clamp-2">{product.description}</p>
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between mt-auto">
                       <span className="text-2xl font-bold text-primary">${product.price}</span>
                       <Badge variant="outline">{product.source}</Badge>
                     </div>
