@@ -131,9 +131,9 @@ export default async function AdminDashboard() {
                 <Button asChild className="w-full">
                   <Link href="/categories">View Categories</Link>
                 </Button>
-                <Button variant="outline" asChild className="w-full">
+{/*                 <Button variant="outline" asChild className="w-full">
                   <Link href="/admin/categories/new">Add Category</Link>
-                </Button>
+                </Button> */}
               </div>
             </CardContent>
           </Card>
@@ -152,7 +152,7 @@ export default async function AdminDashboard() {
                   <Link href="/">View Store</Link>
                 </Button>
                 <Button variant="outline" asChild className="w-full">
-                  <Link href="/api/init-db">Check Database</Link>
+                  <Link href="https://console.neon.tech/app/projects/flat-meadow-45909895">Check Database</Link>
                 </Button>
               </div>
             </CardContent>
