@@ -121,7 +121,13 @@ export default async function HomePage() {
                   </CardContent>
                   <CardFooter className="p-4 pt-0">
                     <Button className="w-full" asChild>
-                      <Link href={`/products/${product.id}`}>View Details</Link>
+                      <a 
+                        href={product.product_url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                      >
+                        View Details
+                      </a>
                     </Button>
                   </CardFooter>
                 </Card>
