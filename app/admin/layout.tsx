@@ -31,7 +31,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-8">
               <Link href="/admin" className="text-2xl font-bold text-primary">
-                EStore Admin
+                XompareDeals Admin
               </Link>
               <nav className="hidden md:flex space-x-6">
                 <Link href="/admin" className="text-gray-600 hover:text-primary">
