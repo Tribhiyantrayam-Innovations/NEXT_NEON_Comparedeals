@@ -1,7 +1,7 @@
 import { neon } from "@neondatabase/serverless"
 
 // Create a serverless connection to your Neon database
-const sql = neon('postgresql://Ecommerce_owner:npg_xR5H9UGWflPc@ep-cool-hall-a8vrlanl-pooler.eastus2.azure.neon.tech/Ecommerce?sslmode=require')
+const sql = neon(process.env.DATABASE_URL!)
 
 // Test database connection and check tables
 export async function testConnection() {
