@@ -115,14 +115,6 @@ export default function LoginPage() {
                 Sign up
               </Link>
             </p>
-
-            {!isAdmin && (
-              <p className="text-sm text-gray-600 mt-2">
-                <Link href="/auth/login?admin=true" className="font-medium text-primary hover:underline">
-                  Admin Login
-                </Link>
-              </p>
-            )}
           </div>
         </CardContent>
       </Card>
